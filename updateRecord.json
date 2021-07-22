@@ -1,0 +1,14 @@
+{
+     "Comment": "Update a record",
+     "Changes": [{
+                "Action": "UPSERT",
+                "ResourceRecordSet": {
+                            "Name": "kubernetes.supergoon.com",
+                            "Type": "A",
+                            "AliasTarget":{
+                                    "HostedZoneId": "Z3AADJGX6KTTL2",
+                                    "DNSName": "templateValue",
+                                    "EvaluateTargetHealth": false
+                              }}
+                          }]
+}
