@@ -1,6 +1,7 @@
 resource "aws_route53_record" "k8s" {
+  count = var.enable_r53 ? 1 : 0
   zone_id = "Z1033734GXUIGI0YW2PJ"
-  name    = "kubernetes.supergoon.com"
+  name    = "${var.websiteDnsName}.supergoon.com"
   type    = "A"
   allow_overwrite = true
   alias {

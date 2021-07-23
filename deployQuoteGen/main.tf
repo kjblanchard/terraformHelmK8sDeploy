@@ -9,4 +9,6 @@ module "webserver_cluster" {
   max_replicas = 10
   cpu_scale_threshold = 1
   deploymentName = "quotegen"
+  websiteDnsName = "kubernetes"
+  enable_r53 = true
 }

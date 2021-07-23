@@ -18,6 +18,16 @@ variable "deploymentName" {
   type        = string
   description = "The deployment name for this deployment, used for naming things properly"
 }
+variable "websiteDnsName" {
+  type        = string
+  default     = "kubernetes"
+  description = "The actual DNS name that you will reach the website at"
+}
+variable "enable_r53"{
+  type        = bool
+  default     = false
+  description = "If you should create a route53 address"
+} 
 
 data "terraform_remote_state" "eks" {  
   backend = "local"
