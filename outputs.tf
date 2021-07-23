@@ -32,3 +32,21 @@ output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = local.cluster_name
 }
+output "bucket_name" {
+  description = "Kubernetes Cluster Name"
+  value       = local.cluster_name
+}
+
+output "lock_name" {
+  description = "Kubernetes Cluster Name"
+  value       = local.cluster_name
+}
+
+output "deployment_bucket"{
+  description = "Where the deployment state will end up at"
+  value = aws_s3_bucket.terraform_state
+}
+output "deployment_locks"{
+  description = "Where the deployment lock will end up at"
+  value = aws_dynamodb_table.terraform_locks
+}

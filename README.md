@@ -1,18 +1,15 @@
 - This is complete - Github webhook action - on changes send out to jenkins
-EKS - Jenkins on cluster
+- This is complete - Create EKS in a root module so that it is separate from the deployments
+- This is complete - A module that we can reuse for deployoments
+- This is complete - A implementation of the module for the deployment
+- This is complete - Variable to automatically set a r53 record of mine so that it updates the dns entry
+
+- Cancelled - Building images in Jenkins in kubernetes - Too time consuming for this project to setup infra-as-code to setup the pipeline dynamically, so using github action instead to build less-cool
 Jenkins - builds code on pod, and pushes up the image somewhere, how about ECR
-Use a module for putting the actual k8s deployment so that it isn't in with the EKS configuration, but we will need to grab some outputs from it
-You'll then run terraform with the variable which would build the image, and take in the specific version number and pull down that image for it
-Update the DNS name with the ELB that is generated from the terraform build of the k8s pod for the built image
-
-- Jenkins you need to download the pipeline plugin, and the generic webhook plugin
-Copy the script
-Make a job and paste it in there
-
 
 How to use
-Run terraform init in root
-Run terraform apply in root
+Run terraform init in remote state to build the remote state for them so that your configuration is stored in the remote state
+Run terraform init and apply in root
 You now have your Kubernetes cluster made.  This has output variables that the modules will call into
 If you want to run kubectl commands make sure you have kubectl and the aws cli installed and then run this command to grab your kubeconfig:
 aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)

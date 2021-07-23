@@ -1,3 +1,4 @@
+#Use the EKS module from the terraform registry to build a EKS cluster to do our deployments to, we will use 3 worker nodes to build on
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = local.cluster_name

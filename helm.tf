@@ -7,6 +7,6 @@ resource "helm_release" "metrics_server_release" {
 
 provider "helm" {
   kubernetes {
-    config_path = "./kubeconfig_kjbs-test-cluster"
+    config_path = "kubeconfig_${local.cluster_name}"
   }
 }

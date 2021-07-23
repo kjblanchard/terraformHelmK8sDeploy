@@ -1,19 +1,4 @@
-variable "region" {
-  default     = "us-east-2"
-  description = "My AWS region"
-}
-
-provider "aws" {
-  region = "us-east-2"
-}
-
-data "aws_availability_zones" "available" {}
-
-locals {
-  cluster_name = "kjbs-test-cluster"
-}
-
-
+# Grab the module from the terraform registry to create the VPC with the following settings
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.66.0"

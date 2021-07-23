@@ -1,3 +1,4 @@
+#Providers to use, we need kubernetes and helm for creating pods and deploying a helm chart
 terraform {
   required_providers {
     aws = {
