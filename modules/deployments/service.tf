@@ -1,10 +1,10 @@
 resource "kubernetes_service" "name_generator_service" {
   metadata {
-    name = "name-generator-service"
+    name = "${var.deploymentName}-service"
   }
   spec {
     selector = {
-      app = "name-generator"
+      app = var.deploymentName
     }
     port {
       port        = 80

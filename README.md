@@ -8,3 +8,16 @@ Update the DNS name with the ELB that is generated from the terraform build of t
 - Jenkins you need to download the pipeline plugin, and the generic webhook plugin
 Copy the script
 Make a job and paste it in there
+
+
+How to use
+Run terraform init in root
+Run terraform apply in root
+You now have your Kubernetes cluster made.  This has output variables that the modules will call into
+If you want to run kubectl commands make sure you have kubectl and the aws cli installed and then run this command to grab your kubeconfig:
+aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
+Move into the deployment folder
+Run terraform init
+Run terraform apply
+You now have your deployment.  You can change the input values for the module if the image name changes when you update it in the build
+

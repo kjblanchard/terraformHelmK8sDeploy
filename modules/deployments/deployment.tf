@@ -1,31 +1,31 @@
 resource "kubernetes_deployment" "name_generator_deployment" {
   metadata {
-    name = "name-generator-deployment"
+    name = "${var.deploymentName}-deployment"
     labels = {
-      name = "name-generator-deployment"
+      name = "${var.deploymentName}-deployment"
     }
   }
 
   spec {
-    replicas = 3
+    replicas = 1
 
     selector {
       match_labels = {
-        app = "name-generator"
+        app = "${var.deploymentName}"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "name-generator"
+          app = "${var.deploymentName}"
         }
       }
 
       spec {
         container {
           image = var.image_id
-          name  = "name-generator"
+          name  = "${var.deploymentName}"
 
           resources {
             limits = {
