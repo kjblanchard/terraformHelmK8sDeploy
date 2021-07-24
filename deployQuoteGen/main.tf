@@ -6,7 +6,7 @@ provider "aws" {
 #Keep enable_r53 to false, I was using this to update my route53 record to the ELB so I could access it
 module "webserver_cluster" {
   source = "../modules/deployments"
-  image_id = "enf3rno/testquotegen:test"
+  image_id = "enf3rno/quotegenerator:latest"
   min_replicas = 2
   max_replicas = 5
   cpu_scale_threshold = 50

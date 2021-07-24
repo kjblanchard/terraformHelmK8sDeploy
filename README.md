@@ -1,7 +1,5 @@
 ### Terraform Deployment to EKS kubernetes cluster with reusable deployment module
 How to use
-0. Run aws configure to set your login variables, or set your env variables correctly.
-    https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 1. Run terraform init and apply in root - THIS WILL TAKE ABOUT 10 MINUTES
     You now have your Kubernetes cluster made.  This has output variables that the modules will call into
     If you want to run kubectl commands make sure you have kubectl and the aws cli installed and then run this command to grab your kubeconfig:
