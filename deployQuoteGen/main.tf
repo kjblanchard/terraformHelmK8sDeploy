@@ -2,6 +2,7 @@ provider "aws" {
   region = "us-east-2"
 }
 
+#Use our module in the modules folder to build this, and set all the input variables to below.
 module "webserver_cluster" {
   source = "../modules/deployments"
   image_id = "enf3rno/testquotegen:test"
