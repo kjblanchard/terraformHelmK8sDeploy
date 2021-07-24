@@ -1,19 +1,11 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 3.20.0"
-    }
-
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = ">= 2.0.1"
-    }
+#Grab the local state from the parent module so that we can reference the k8s cluster
+#This should end up moving to a remote backend and would reference that in a real example.
+data "terraform_remote_state" "eks" {  
+  backend = "local"
+  config = {    
+    path = "../terraform.tfstate"  
   }
 }
-
-
-# Retrieve EKS cluster information
 provider "aws" {
   region = data.terraform_remote_state.eks.outputs.region
 }

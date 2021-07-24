@@ -1,4 +1,5 @@
-resource "kubernetes_deployment" "name_generator_deployment" {
+#Creates the kubernetes deployment of the actual thing we are deploying, left it generic as this module should be used for any deployment until a helm chart is created for it
+resource "kubernetes_deployment" "k8s_deployment" {
   metadata {
     name = "${var.deploymentName}-deployment"
     labels = {

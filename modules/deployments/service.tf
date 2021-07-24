@@ -1,4 +1,4 @@
-resource "kubernetes_service" "name_generator_service" {
+resource "kubernetes_service" "k8s_service" {
   metadata {
     name = "${var.deploymentName}-service"
   }

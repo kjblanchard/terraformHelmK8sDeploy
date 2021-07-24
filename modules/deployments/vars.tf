@@ -28,10 +28,3 @@ variable "enable_r53"{
   default     = false
   description = "If you should create a route53 address"
 } 
-
-data "terraform_remote_state" "eks" {  
-  backend = "local"
-  config = {    
-    path = "../terraform.tfstate"  
-  }
-}
