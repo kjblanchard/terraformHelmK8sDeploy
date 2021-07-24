@@ -13,7 +13,7 @@ resource "kubernetes_horizontal_pod_autoscaler" "deployment_hpa" {
     scale_target_ref {
       api_version = "apps/v1"
       kind        = "Deployment"
-      name        = "${var.deploymentName}"
+      name        = "${var.deploymentName}-deployment"
     }
   }
 }

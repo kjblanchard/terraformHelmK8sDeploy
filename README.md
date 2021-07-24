@@ -6,7 +6,6 @@ How to use
     You now have your Kubernetes cluster made.  This has output variables that the modules will call into
     If you want to run kubectl commands make sure you have kubectl and the aws cli installed and then run this command to grab your kubeconfig:
         aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
-        ![Getting your kubeconfig](https://github.com/[kjblanchard]/[terraformHelmK8sDeploy]/blob/[master]/getkctl.gif?raw=true)
         ![Getting your kubeconfig](https://github.com/kjblanchard/terraformHelmk8sDeploy/raw/master/content/getkctl.gif "Logo Title Text 1")
 2. Move into the deployment folder and run terraform init and apply
         ![Applying and checking pods](https://github.com/[kjblanchard]/[reponame]/blob/[branch]/image.jpg?raw=true)
