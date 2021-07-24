@@ -1,4 +1,5 @@
 #Creates the kubernetes deployment of the actual thing we are deploying, left it generic as this module should be used for any deployment until a helm chart is created for it
+#Use replicas of 1 as we are using a horizontal pod scaler to scale it up and it will override this, it is optional but left it anyways
 resource "kubernetes_deployment" "k8s_deployment" {
   metadata {
     name = "${var.deploymentName}-deployment"
