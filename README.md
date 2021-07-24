@@ -7,10 +7,10 @@ How to use
     If you want to run kubectl commands make sure you have kubectl and the aws cli installed and then run this command to grab your kubeconfig:
         aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
         ![Getting your kubeconfig](https://github.com/kjblanchard/terraformHelmk8sDeploy/raw/master/content/getkctl.gif "Getting your Kubeconfig")
-2. Move into the deployment folder and run terraform init and apply
+2. Move into the deployment folder and run terraform init and apply, you can now view your pods and metrics with kubectl commands.
         ![Getting your kubeconfig](https://github.com/kjblanchard/terraformHelmk8sDeploy/raw/master/content/viewpods.gif "View your pods")
 3. You now have your deployment.  You can change the input values for the module if the image name changes when you update it in the build.  You can also view it by navigating to the ELBs address.  You can get the elb address by running the command "kubectl get svc" and then grabbing the service name in it.
-        ![Get the service](https://github.com/kjblanchard/terraformHelmk8sDeploy/raw/master/content/changedeployment.gif "Get the service name")
+        ![Get the service](https://github.com/kjblanchard/terraformHelmk8sDeploy/raw/master/content/getelb.gif "Get the service name")
         ![Changing the variables](https://github.com/kjblanchard/terraformHelmk8sDeploy/raw/master/content/changedeployment.gif "Modify your deployment")
 4. Run terraform destroy in the deployQuoteGen folder to destroy the deployment
 5. Run terraform destroy in the root folder to destroy the EKS cluster
